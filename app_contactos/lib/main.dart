@@ -1,4 +1,4 @@
-import 'package:app_contactos/login_page.dart';
+import 'package:app_contactos/pantallas/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

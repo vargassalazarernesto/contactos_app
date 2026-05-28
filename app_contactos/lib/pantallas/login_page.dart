@@ -1,7 +1,8 @@
 
+import 'package:app_contactos/pantallas/pantallaRegistro.dart';
 import 'package:app_contactos/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:app_contactos/principal.dart';
+import 'package:app_contactos/pantallas/principal.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -56,7 +57,7 @@ class _LoginPageState extends State<LoginPage>{
               SizedBox(height:40),
               TextField(controller: _usernameController,decoration: InputDecoration(labelText: "Usuario"),),
               SizedBox(height: 40,),
-              TextField(controller: _passwordController,decoration: InputDecoration(labelText: "Contraseña"),obscureText: false,)
+              TextField(controller: _passwordController,decoration: InputDecoration(labelText: "Contraseña"),obscureText: true,)
             ],
           ),
         
@@ -74,7 +75,10 @@ class _LoginPageState extends State<LoginPage>{
               const Text("No tienes cuenta?"),
               SizedBox(width: 5,),
               GestureDetector(
-                onTap: () {print("Texto Presionado");},
+                onTap: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>PantallaRegistro()),
+                );
+                },
                 child: Text("Registrate aqui",style:TextStyle(
                   color: const Color.fromARGB(255, 140, 0, 255)
                 ),),
